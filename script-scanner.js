@@ -7,7 +7,27 @@ let html5QrCodeScanner = new Html5QrcodeScanner("scanner-container", {
 let flashOn = false; // Track flash state
 
 function onScanSuccess(decodedText, decodedResult) {
-    alert(`QR Code detected: ${decodedText}`);
+    // Create a container for the message and button
+    let messageContainer = document.createElement('div');
+    messageContainer.id = 'qr-message-container';
+    
+    // Create the message element
+    let message = document.createElement('p');
+    message.textContent = `QR Code detected: ${decodedText}`;
+    
+    // Create the button element
+    let redirectButton = document.createElement('button');
+    redirectButton.textContent = 'Redirect to Page';
+    redirectButton.onclick = () => {
+        window.location.href = decodedText;
+    };
+    
+    // Append message and button to the container
+    messageContainer.appendChild(message);
+    messageContainer.appendChild(redirectButton);
+    
+    // Append the container to the body or a specific element
+    document.body.appendChild(messageContainer);
     
     // Clear the scanner and restart it to be ready for new scans
     html5QrCodeScanner.clear().then(() => {
