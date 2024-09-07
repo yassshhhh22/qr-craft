@@ -1,0 +1,141 @@
+/* Base styles for mobile-first (small devices) */
+body {
+    background: linear-gradient(135deg, #1d2b64, #f8cdda);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Section Styles */
+.section {
+    width: 100%;
+    border: 4px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.section:focus-within {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Flash Button Styles */
+.flash-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.flash-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.flash-button img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+/* Input and Button Styles */
+#link-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#link-input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Larger screens (desktops) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+
+    #link-input {
+        width: 70%;
+        display: inline-block;
+    }
+
+    button {
+        width: auto;
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+
+    #generate-qr {
+        margin-left: 10px;
+        display: inline-block;
+    }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

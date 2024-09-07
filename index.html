@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Scanner and Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to the QR code and scanner libraries -->
+    <script src="qrcode.min.js"></script>
+    <script src="html5-qrcode.min.js"></script>
+</head>
+<body>
+    
+<div class="container">
+    <!-- Scanner Section -->
+    <div id="scanner-section" class="section">
+        <h2>QR Code Scanner</h2>
+        <div id="scanner-container"></div>
+        <button id="toggle-flash" class="flash-button">
+            <img src="flash-svgrepo-com.svg" alt="Flash" />
+        </button>
+        <button id="toggle-to-generator">Switch to QR Code Generator</button>
+    </div>
+
+    <!-- QR Generator Section -->
+    <div id="generator-section" class="section" style="display: none;">
+        <h2>QR Code Generator</h2>
+        <input type="text" id="link-input" placeholder="Enter link here">
+        <button id="generate-qr">Generate QR Code</button>
+        <div id="qrcode"></div>
+        <button id="toggle-to-scanner">Switch to QR Code Scanner</button>
+    </div>
+</div>
+
+<!-- Include JS files -->
+<script src="script-scanner.js"></script>
+<script src="script-generator.js"></script>
+</body>
+</html>
